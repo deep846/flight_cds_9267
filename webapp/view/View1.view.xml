@@ -1,0 +1,26 @@
+<mvc:View controllerName="flightcds9267.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+
+    <Page id="page" title="{i18n>title}">
+        <!-- This is the masterDetail pages for navigation menue -->
+        <List id="idToolsList1" items="{crud>/page}"  selectionChange="onToolsListSelectionChange" mode="SingleSelectMaster">
+            <items>
+            <ObjectListItem id="oObjectListItem1"
+            icon="{crud>icon}"
+            intro="{crud>id}"
+            number=""
+            numberTextDirection="Inherit"
+            numberUnit="Hello"
+            title="{crud>title}"
+            >
+                <attributes>
+                    <ObjectAttribute id="obj"  text="{crud>use}" title="Use" ></ObjectAttribute>
+                </attributes>
+            </ObjectListItem>
+            </items>
+        </List>
+
+    </Page>
+</mvc:View>

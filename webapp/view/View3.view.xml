@@ -1,0 +1,66 @@
+<mvc:View xmlns:f="sap.f"
+    controllerName="flightcds9267.controller.View3"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+	xmlns:f1="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+>
+    <Page id="page3" title="{i18n>title3}" showNavButton="false" navButtonPress=".onNavButtonPress" > 
+
+    <!-- This page is for booking that takes input from the user -->
+
+    <content>
+    
+        <VBox id="vb" class="sapUiSmallMargin">
+		<f1:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Enter Booking Details"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f1:content>
+				<Label required="true" id="lname" text="Name" />
+				<Input name="name" required="true" id="name" placeholder="Enter you name"/>
+				<Label id="ldate" text="Flight Date" required="true"/>
+				 <DatePicker  name="Date" required="true" id="date" width="200px" valueFormat="dd-MM-yyyy" placeholder="Select a date"/>
+				<Label id="lcon" text="Connection ID" required="true"/>
+                <Select id="con"  required="true" items="{/zsfligtbooking_9267}">
+					<items>
+						<core:Item id="11" text="{connid}, {carrid}" key="{connid}"/>
+					</items>
+				</Select>
+                <Label id="lform" text="From" required="true"/>
+                <Select id="loc1" selectedKey="{Country}" required="true" items="{cities>/}">
+					<items>
+						<core:Item id="12" text="{cities>name}, {cities>state}" key="{cities>name}"/>
+					</items>
+				</Select>
+                <Label id="lto" text="To" required="true"/>
+                <Select id="loc2" selectedKey="{Country}" required="true" items="{cities>/}">
+					<items>
+						<core:Item id="13" text="{cities>name}, {cities>state}" key="{cities>name}"/>
+					</items>
+				</Select>
+				<Label id="lcontact" text="Contact No" required="true"/>
+				<Input name="Contact No" maxLength="10" id="contact" type="Tel" placeholder="contact number" required="true"/>
+
+			</f1:content>
+            <Button id="sbtn" text="Book Ticket" press=".onPressBook"></Button>
+		</f1:SimpleForm>
+	</VBox>
+    </content>
+    
+    </Page>
+</mvc:View>

@@ -1,0 +1,12 @@
+<core:FragmentDefinition 
+xmlns:core="sap.ui.core" 
+xmlns="sap.m"> 
+
+<SelectDialog id="selectDialog" items="{/zsfligtbooking_9267}" confirm="onConfrim">
+    <items>
+        <DisplayListItem id="displayListItem" value="{connid}"></DisplayListItem>
+    </items>
+</SelectDialog>
+
+
+</core:FragmentDefinition>

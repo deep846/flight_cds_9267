@@ -1,0 +1,34 @@
+<mvc:View
+    xmlns:table="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+    xmlns:l="sap.ui.layout"
+>
+    <!-- This is the empty view -->
+    <Page
+        id="emptyView"
+        title="Click any tile to get details"
+    >
+        <!-- This is a resonsive illustreted view to let people know about the page status -->
+        <l:ResponsiveSplitter id="rs66">
+            <l:PaneContainer
+                id="pc66"
+                orientation="Vertical"
+            >
+                <l:SplitPane id="sp66">
+                    <IllustratedMessage
+                        id="it66"
+                        title="Flight Details page"
+                        description="Click on any tile to get the Details releted to The Field"
+                        enableVerticalResponsiveness="true"
+                        illustrationType="sapIllus-SimpleMagnifier"
+                    />
+                </l:SplitPane>
+            </l:PaneContainer>
+        </l:ResponsiveSplitter>
+    </Page>
+</mvc:View>

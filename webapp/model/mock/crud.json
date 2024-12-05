@@ -1,0 +1,28 @@
+{
+    "page":[
+        {
+            "id":1,
+            "title": "See Booking",
+            "icon": "sap-icon://show",
+            "use": "You can see your booking here"
+        },
+        {
+            "id":2,
+            "title": "Create Booking",
+            "icon": "sap-icon://write-new",
+            "use": "You can create your booking here"
+        },
+        {
+            "id":3,
+            "title": "Update Booking",
+            "icon": "sap-icon://newspaper",
+            "use": "You can update your booking here"
+        },
+        {
+            "id":4,
+            "title": "Delete Booking",
+            "icon": "sap-icon://delete",
+            "use": "You can Delete your booking here"
+        }
+    ]
+}

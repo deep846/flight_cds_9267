@@ -1,0 +1,26 @@
+<mvc:View xmlns:f="sap.f"
+    controllerName="flightcds9267.controller.View4"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+	height="100%"
+>
+    <Page id="page5" title="{i18n>title5}" showNavButton="false" navButtonPress=".onNavButtonPress" > 
+
+      <!-- This is a resonsive illustreted view to let people know about the page status -->
+        <l:ResponsiveSplitter id="rs1">
+		<l:PaneContainer id="pc1" orientation="Vertical">
+			<l:SplitPane id="sp1">
+				
+				<IllustratedMessage id="it1" title="Coming Soon...." 
+                description="This page's logic is not implimented yet it will be active soon"
+                enableVerticalResponsiveness="true" 
+                illustrationType="sapIllus-NoActivities">
+					
+				</IllustratedMessage>
+			</l:SplitPane>
+		</l:PaneContainer>
+	</l:ResponsiveSplitter>
+    
+    </Page>
+</mvc:View>

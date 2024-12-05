@@ -1,0 +1,99 @@
+<mvc:View
+    xmlns:f="sap.f"
+    controllerName="flightcds9267.controller.View2"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+>
+    <!-- This is the 1st details page for flight details showing -->
+    <Page
+        id="page1"
+        title="{i18n>title2}"
+        showNavButton="false"
+        navButtonPress=".onNavButtonPress"
+    >
+        <content>
+            <!-- This toolbar is for searching and sorting Places -->
+            <Toolbar id="tl">
+                <SearchField
+                    placeholder="Search by Connection ID"
+                    id="sf"
+                    width="50%"
+                    search=".onSearchFieldSearch"
+                    liveChange="onSearchFieldSearch"
+                />
+                <Button
+                    id="btn"
+                    text="Sort"
+                    press=".sortAdv"
+                    icon="sap-icon://sort"
+                />
+                <Input
+                    width="40%"
+                    liveChange="onSearchFieldSearch"
+                    id="f4help"
+                    value=""
+                    showValueHelp="true"
+                    valueHelpRequest="onf4Help1"
+                    placeholder="select connection id"
+                />
+            </Toolbar>
+
+            <HBox
+                id="hb"
+                justifyContent="Center"
+                alignItems="Center"
+                width="100%"
+            >
+                <!-- This is for busy indicator for while loading is late -->
+                <BusyIndicator
+                    class="sapUiMediumMargin"
+                    id="busyIndicator"
+                    visible="true"
+                />
+            </HBox>
+                <!-- This is the list for showing the pages the details list of flight booking -->
+            <List
+                id="idToolsList"
+                items="{flight>/results}"
+                selectionChange="onToolsListSelectionChange"
+                mode="SingleSelectMaster"
+            >
+                <items>
+                    <ObjectListItem
+                        id="obi"
+                        icon="sap-icon://flight"
+                        intro="{flight>connid}"
+                        number="{path:'flight>fldate', formatter:'.DateFormat'}"
+                        numberTextDirection="Inherit"
+                        numberUnit="{=${path:'flight>order_date', formatter:'.DateFormat'}==='N/A'?'UnSuccessfull':'Successfull'}"
+                        title="{flight>carrid}"
+                    >
+                        <attributes>
+                            <ObjectAttribute
+                                id="ob"
+                                text="{path:'flight>fldate', formatter:'.DateFormat'}"
+                                title="Flight Date"
+                            />
+                        </attributes>
+                        <firstStatus>
+                            <ObjectStatus
+                                id="obs"
+                                title="Booking Date"
+                                text="{path:'flight>order_date', formatter:'.DateFormat'}"
+                                state="Success"
+                            />
+                        </firstStatus>
+                        <secondStatus>
+                            <ObjectStatus
+                                id="obs1"
+                                title="Booking ID"
+                                text="{flight>bookid}"
+                                state="Success"
+                            />
+                        </secondStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

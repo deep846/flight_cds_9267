@@ -1,0 +1,188 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "flightcds9267",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.15.5",
+      "toolsId": "656bcfb4-f31f-4e57-a694-69fa983f43ce"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZSFLIGTBOOKING_9267_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "ZSFLIGTBOOKING_9267_CDS_VAN"
+          ],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "ZSFLIGTBOOKING_9267_CDS_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZSFLIGTBOOKING_9267_CDS_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/ZSFLIGTBOOKING_9267_CDS_VAN.xml"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "flight_management-manage": {
+          "semanticObject": "flight_management",
+          "action": "manage",
+          "title": "{{flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.130.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "flightcds9267.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "flightcds9267.view",
+        "async": true,
+        "viewPath": "flightcds9267.view"
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": ":?query:",
+          "target": ["TargetView1","emptyView"]
+        },
+        {
+          "name": "RouteView2",
+          "pattern": "View2",
+          "target": ["TargetView1","TargetView2"]
+        },
+        {
+          "name": "RouteView3",
+          "pattern": "View3",
+          "target": ["TargetView1","TargetView3"]
+        },
+        {
+          "name": "RouteView4",
+          "pattern": "View4",
+          "target": ["TargetView1","TargetView4"]
+        },
+        {
+          "name": "RouteView5",
+          "pattern": "View5",
+          "target": ["TargetView1","TargetView5"]
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "id": "View1",
+          "name": "View1",
+          "controlAggregation": "masterPages",
+          "level": 1
+        },
+        "emptyView": {
+          "id": "empty",
+          "name": "empty",
+          "controlAggregation":"detailPages",
+          "level": 1
+        },
+        "TargetView2": {
+          "id": "View2",
+          "name": "View2",
+          "controlAggregation":"detailPages",
+          "level": 2
+        },
+        "TargetView3": {
+          "id": "View3",
+          "name": "View3",
+          "controlAggregation":"detailPages",
+          "level": 2
+        },
+        "TargetView4": {
+          "id": "View4",
+          "name": "View4",
+          "controlAggregation":"detailPages",
+          "level": 2
+        },
+        "TargetView5": {
+          "id": "View5",
+          "name": "View5",
+          "controlAggregation":"detailPages",
+          "level": 2
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "flightcds9267.view.App",
+      "type": "XML",
+      "id": "App"
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "flightcds9267"
+  }
+}

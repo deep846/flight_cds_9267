@@ -1,0 +1,10 @@
+<mvc:View controllerName="flightcds9267.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <!-- we are using split app for master and detailpages -->
+    <SplitApp id="app">
+
+    
+    </SplitApp>
+</mvc:View>
